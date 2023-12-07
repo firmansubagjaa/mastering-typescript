@@ -1,0 +1,40 @@
+config tsconfig
+
+on "compilerOptions", we have to enable some config
+"rootDir": "./src",     // execute on src folder
+"outDir": "./build",    // output execute in build from compile *.ts
+"noEmitOnError": true,  // checking for error on typescript version
+
+and for another config in outside "compilerOptions", we have to add include
+"include": ["./src/**/*]
+we can execute only in src and output to build
+
+tsc -w | tsc --watch    // running typescript file realtime
+
+so
+
+{
+   "compilerOptions": {
+      /* Language and Environment */
+      "target": "ES2016",
+
+      /* Modules */
+      "module": "commonjs",
+      "rootDir": "./src",
+
+      /* Emit */
+      "outDir": "./dist",
+      "noEmitOnError": true,
+
+      /* Interop Constraints */
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      
+      /* Type Checking */
+      "strict": true,
+
+      /* Completeness */
+      "skipLibCheck": true
+   },
+   "include": ["./src/**/*"]
+}
