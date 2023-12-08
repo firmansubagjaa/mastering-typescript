@@ -1,7 +1,7 @@
 {
    "compilerOptions": {
       "target": "ES2016",
-      "module": "CommonJS",
+      "module": "commonjs",
       "rootDir": "./src",
       "outDir": "./dist",
       "noEmitOnError": true,
@@ -10,5 +10,5 @@
       "strict": true,
       "skipLibCheck": true
    },
-   "include": ["./src/**/*"],
+   "include": ["./src/**/*"]
 }
