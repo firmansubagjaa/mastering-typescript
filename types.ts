@@ -11,7 +11,7 @@ export interface MataKuliah {
   sks: number;
 }
 
-export interface ResponseData<T> {
+export interface ResponseData<T extends object> {
   statusCode: number;
   message: string;
   data: T;
