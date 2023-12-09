@@ -1,18 +1,28 @@
-export interface Mahasiswa {
-  name: string;
-  age: number;
-  semester: number;
+enum Gender {
+  MALE = "male",
+  FEMALE = "female",
 }
 
-export interface MataKuliah {
-  name: string;
-  code: string;
+interface MataKuliah {
+  kode: string;
+  nama: string;
   semester: number;
   sks: number;
 }
 
-export interface ResponseData<T extends object> {
+interface Mahasiswa {
+  nama: string;
+  nim: number;
+  umur: number;
+  jenisKelamin: Gender;
+  semester: number;
+  mataKuliah: MataKuliah[];
+}
+
+interface ResponseData<T extends object> {
   statusCode: number;
   message: string;
   data: T;
 }
+
+export { ResponseData, Mahasiswa, Gender, MataKuliah };

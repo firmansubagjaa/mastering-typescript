@@ -1,46 +1,33 @@
-import { ResponseData, Mahasiswa, MataKuliah } from "./types";
+import { ResponseData, Gender, Mahasiswa } from "./types";
 
-type DataMahasiswaType = ResponseData<Mahasiswa[]>;
-type DataMataKuliahType = ResponseData<MataKuliah[]>;
+let dataMahasiswa: ResponseData<Mahasiswa[]>;
 
-let DataMahasiswaResponse: DataMahasiswaType;
-let DataMataKuliahResponse: DataMataKuliahType;
-
-DataMahasiswaResponse = {
+dataMahasiswa = {
   statusCode: 200,
   message: "success",
   data: [
     {
-      name: "Firman",
-      age: 25,
+      nama: "Firman Subagja",
+      nim: 3242425,
+      umur: 24,
+      jenisKelamin: Gender.MALE,
       semester: 7,
-    },
-    {
-      name: "Farhan",
-      age: 26,
-      semester: 7,
+      mataKuliah: [
+        {
+          kode: "PBO",
+          nama: "Pemograman Berbasis Objek",
+          semester: 7,
+          sks: 3,
+        },
+        {
+          kode: "OOP",
+          nama: "Object Oriented Programming",
+          semester: 7,
+          sks: 3,
+        },
+      ],
     },
   ],
 };
 
-DataMataKuliahResponse = {
-  statusCode: 200,
-  message: "success",
-  data: [
-    {
-      code: "PBO",
-      name: "Pemograman Berbasis Objek",
-      semester: 7,
-      sks: 3,
-    },
-    {
-      code: "DSA",
-      name: "Data Structure and Algorithm",
-      semester: 1,
-      sks: 3,
-    },
-  ],
-};
-
-console.log(DataMahasiswaResponse);
-console.log(DataMataKuliahResponse);
+console.log(dataMahasiswa);
